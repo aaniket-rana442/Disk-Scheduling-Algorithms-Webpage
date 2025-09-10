@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+    <div class="allalgo">
+        <h1>Circular LOOK (C-LOOK) Algorithm</h1>
+        <p>
+            Circular LOOK is like a C-SCAN which uses a return
+            sweep before processing a set of disk requests [2]. It
+            does not reach the end of the tracks unless there is a
+            request, either read or write on such disk location
+            similar with the LOOK algorithm.
+            <br><br>
+            As LOOK is similar to the SCAN algorithm, in a similar way,
+            C-LOOK is similar to the C-SCAN disk scheduling algorithm. In C-LOOK,
+            the disk arm in spite of going to the end goes only to the last request to be serviced in 
+            front of the head and then from there goes to the other end's last request. 
+            Thus, it also prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.
+        </p>
+        <h3>Working of C-LOOK Algorithm</h3>
+        <ul>
+            <li>The disk head moves in one direction (typically from low to high) to serve all pending requests.</li>
+            <li>It stops at the last request in that direction, without going to the end of the disk.</li>
+            <li>Instead of reversing, the disk head jumps back to the lowest request and continues servicing requests in the same direction.</li>
+            <li>This movement forms a circular path, hence the name C-LOOK.</li>
+        </ul>
+        <div class="advantages">
+            <h3>Advantages of C-LOOK Algorithm</h3>
+            <ul>
+                <li>The circular nature reduces unnecessary movements compared to SCAN or LOOK.</li>
+                <li>It does not go to the end of the disk unless necessary.</li>
+                <li>This algorithm works well with large disk sizes and heavy loads.</li>
+                <li>It provides a more predictable and faster response time for requests.</li>
+            </ul>
+        </div>
+        <div class="disadvantages">
+            <h3>Disadvantages of C-LOOK Algorithm</h3>
+            <ul>
+                <li>Requests closer to the starting point may have to wait longer.</li>
+                <li>Slightly more complex to implement compared to FCFS or LOOK.</li>
+                <li>Starvation may occur if continuous requests arrive in one direction.</li>
+            </ul>
+        </div>
+        <br>
+        <a href="/stimulate">Let's dive into the stimulation process</a>
+        <br><br>
+    </div>
+</body>

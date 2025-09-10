@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disk Algo</title>
+</head>
+<body>
+  <form id="algoForm">
+    <label for="seq">Request Sequence (comma-separated):</label>
+    <input id="seq" type="text" placeholder="eg:95,108,34,119" name="sequence">
+    <br><br>
+
+    <label for="headpos">Starting Head Position:</label>
+    <input id="headpos" type="number" placeholder="eg: 50" name="headpos">
+    <br><br>
+
+    <label for="algo">Select Algorithm:</label>
+    <select id="algo" name="algo_name">
+      <option value="FCFS">FCFS</option>
+      <option value="SSTF">SSTF</option>
+      <option value="SCAN">SCAN</option>
+      <option value="C-SCAN">C-SCAN</option>
+      <option value="LOOK">LOOK</option>
+      <option value="C-LOOK">C-LOOK</option>
+    </select>
+    <br><br>
+
+    <button type="submit">Stimulate</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("algoForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // stop page reload
+
+      // Get values
+      let seqInput = document.getElementById("seq").value;
+      let headpos = parseInt(document.getElementById("headpos").value, 10);
+
+      // Convert sequence string -> array of numbers
+      let seqArray = seqInput.split(",").map(num => parseInt(num.trim(), 10));
+        console.log(seqArray);
+      // Sum of sequence
+      let sum = seqArray.reduce((a, b) => a + b, 0);
+
+      // Divide by head position
+      let result = sum / headpos;
+
+      // Show result
+      document.getElementById("result").innerText =
+        "Sum of sequence = " + sum + ", Result = " + result;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="allalgo">
+        <h1>First Come First Served Algorithm</h1>
+        <p>It is the simplest form of disk scheduling algorithms. The
+            I/O requests are served or processes according to their
+            arrival. The request arrives first will be accessed and
+            served first. Since it follows the order of arrival, it
+            causes the wild swings from the innermost to the
+            outermost tracks of the disk and vice versa. The
+            farther the location of the request being serviced by the
+            read/write head from its current location, the higher the
+            seek time will be.
+        </p>
+        <h3>How FCFS Algorithm Works</h3>
+        <p>
+            The simplest form of disk scheduling is, of course, the first-come, first-served (FCFS) algorithm (or FIFO). This algorithm is intrinsically fair, but it generally does not provide the fastest service. Consider, for example, a disk queue with requests for I/O to blocks on cylinders
+            <br>
+            <b>98,183, 37,122,14,124, 65, 67</b><br>
+            
+            in that order. If the disk head is initially at cylinder 53, it will first move from 53 to 98, then to 183, 37, 122, 14, 124, 65, and finally to 67, for a total head movement of 640 cylinders. 
+            The wild swing from 122 to 14 and then back to 124 illustrates the problem with this schedule. If the requests for cylinders 37 and 14 could be serviced together, before or after the requests for 122 and 124, the total head movement could be decreased substantially, and performance could be thereby improved.
+        </p>
+        <div class="advantages">
+            <h3>Advantages of FCFS</h3>
+            <p>Here are some of the advantages of First Come First Serve.</p>
+            <ul>
+                <li>It is one of the simplest disk scheduling algorithms.</li>
+                <li>Easy to implement using a basic queue structure (FIFO).</li>
+                <li>Every request is handled in the order it arrives, ensuring no process is starved.</li>
+                <li>No priority or preference is given, making it fair for all requests.</li>
+                <li>Since requests are processed sequentially, all requests are guaranteed to be served eventually.</li>
+            </ul>
+            <p>However, it is worth noting that while FCFS is simple and fair, it may lead to higher average waiting times and poor performance in scenarios with frequent, scattered disk requests.</p>
+        </div>
+
+        <div class="disadvantages">
+            <h3>Disadvantages of FCFS</h3>
+            <p>Here are some of the disadvantages of First Come First Serve.</p>
+            <ul>
+                <li>It can lead to long waiting times if a large request is followed by smaller requests.</li>
+                <li>Disk head movements may be excessive, causing inefficient use of disk bandwidth.</li>
+                <li>A slow or large request can block subsequent requests, leading to significant delays.</li>
+                <li>Critical or time-sensitive requests are not prioritized, which may lead to system inefficiencies.</li>
+                <li>Since requests are not optimized for seek time, the total distance the disk head travels may be greater, resulting in slower performance.</li>
+            </ul>
+        </div>
+        <br>
+        <a href="/stimulate">Let's dive into the stimulation process</a>
+        <br><br>
+    </div>
+</body>

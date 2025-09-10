@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+    <div class="allalgo">
+        <h1> SCAN Scheduling Algorithm</h1>
+        <p>
+            In the SCAN algorithm, the disk arm starts at one end of the disk and moves
+            toward the other end, servicing requests as it reaches each cylinder, until
+            it gets to the other end of the disk. At the other end, the direction of head
+            movement is reversed, and servicing continues. The head continuously scans back
+            and forth across the disk. The SCAN algorithm is sometimes called the elevator
+            algorithm, since the disk arm behaves just like an elevator in a building, first
+            servicing all the requests going up and then reversing to service requests the other way.
+            <br><br>
+            This algorithm is performed by moving the R/W head
+            back-and-forth to the innermost and outermost track. As
+            it scans the tracks from end to end, it process all the
+            requests found in the direction it is headed. This will
+            ensure that all track requests, whether in the outermost,
+            middle or innermost location, will be traversed by the
+            access arm thereby finding all the requests. This is
+            also known as the Elevator algorithm.
+        </p>
+        <h3>How SCAN Algorithm Works</h3>
+        <ul>
+            <li>The disk head moves in one direction (either towards the higher-numbered or lower-numbered tracks).</li>
+            <li>It serves all the requests in that direction until it reaches the end of the disk or the last request.</li>
+            <li>After reaching the end, the disk head reverses its direction and serves requests on the way back.</li>
+            <li>This back-and-forth movement is similar to an elevator that moves up and down, stopping to serve people (requests) on the way.</li>
+        </ul>
+        <div class="advantages">
+            <h3>Advantages of SCAN Algorithm</h3>
+            <ul>
+                <li>Ensures that all requests are eventually served.</li>
+                <li>Ideal when there are many requests spread across the disk.</li>
+                <li>Provides a good compromise between seek time and fairness.</li>
+                <li>Easier to predict seek times compared to random algorithms.</li>
+            </ul>
+        </div>
+        <div class="disadvantages">
+            <h3>Disadvantages of SCAN Algorithm</h3>
+            <ul>
+                <li>Requests located near the ends of the disk may experience longer wait times.</li>
+                <li>The head travels to the edge even if no requests are present, increasing seek time.</li>
+                <li>Other algorithms like LOOK and C-LOOK can reduce unnecessary movements.</li>
+            </ul>
+        </div>
+        <br>
+        <a href="/stimulate">Let's dive into the stimulation process</a>
+        <br><br>
+    </div>
+</body>

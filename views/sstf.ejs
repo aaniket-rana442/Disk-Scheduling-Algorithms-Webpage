@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+    <div class="allalgo">
+        <h1>Shortest Seek Time First (SSTF) Algorithm</h1>
+        <p>
+            This algorithm is based on the idea that that he R/W
+            head should proceed to the track that is closest to its
+            current position. The process would continue until all
+            the track requests are taken care of.
+            <br><br>
+            In SSTF (Shortest Seek Time First), requests having the
+            shortest seek time are executed first. So, the seek time 
+            of every request is calculated in advance in the queue and 
+            then they are scheduled according to their calculated seek 
+            time. As a result, the request near the disk arm will get 
+            executed first. SSTF is certainly an improvement over FCFS 
+            as it decreases the average response time and increases the 
+            throughput of the system.
+        </p>
+        <h3>How SSTF Works</h3>
+        <ul>
+            <li>The algorithm starts with the current head position.</li>
+            <li>It scans all pending requests and finds the one that requires the shortest seek time (i.e., the smallest distance from the current position).</li>
+            <li>The disk head moves to that request and serves it.</li>
+            <li>After servicing, the algorithm repeats the process by finding the next nearest request.</li>
+            <li>This continues until all requests are completed.</li>
+        </ul>
+
+        <div class="advantages">
+            <h3>Advantages of SSTF Algorithm</h3>
+            <ul>
+                <li>Since the shortest distance is always selected, it reduces the overall seek time.</li>
+                <li>Provides quicker access to frequently requested data.</li>
+                <li>Generally performs better than FCFS for large workloads.</li>
+            </ul>
+        </div>
+        <div class="disadvantages">
+            <h3>Disadvantages of SSTF Algorithm</h3>
+            <ul>
+                <li>Requests located far from the current head position may experience starvation if closer requests keep arriving.</li>
+                <li>Some requests may wait indefinitely, especially in heavily loaded systems.</li>
+                <li>Due to possible starvation, it's not suitable for real-time applications.</li>
+                <li>Continuous recalculation of the shortest seek time increases algorithm complexity.</li>
+            </ul>
+        </div>
+        <br>
+        <a href="/stimulate">Let's dive into the stimulation process</a>
+        <br><br>
+    </div>
+</body>

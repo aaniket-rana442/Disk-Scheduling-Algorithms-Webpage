@@ -1,0 +1,39 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="stimulate-form">
+        <h1>Lets test different Algorithms</h1>
+        <form method="post" action="/stimulate/action" id="algoform">
+            <div>
+                <label for="sequence">Request Sequence (comma-separated):</label><br>
+                <input id="sequence" placeholder="eg: 95,180,34,119" name="seq" type="text" value="<%- seq %>" required>
+            </div>
+            <div>
+                <label for="head">Starting Head Position:</label><br>
+                <input id="head" name="curr" placeholder="eg:50" type="number" value="<%- curr %>" required>
+            </div>
+            <div>
+                <label for="algo">Select Algorithm:</label><br>
+                <select name="algoname" id="algo" required>
+                    <option value="FCFS" <%- algoname === "FCFS" ? "selected" : "" %>>First Come First Served Algorithm (FCFS)</option>
+                    <option value="SSTF" <%- algoname === "SSTF" ? "selected" : "" %>>Shortest Seek Time First Algorithm (SSTF)</option>
+                    <option value="LOOK" <%- algoname === "LOOK" ? "selected" : "" %>>LOOK Disk Scheduling Algorithm (LOOK)</option>
+                    <option value="CLOOK" <%- algoname === "CLOOK" ? "selected" : "" %>>Circular LOOK Algorithm (C-LOOK)</option>
+                    <option value="SCAN" <%- algoname === "SCAN" ? "selected" : "" %>>SCAN Scheduling Algorithm (SCAN)</option>
+                    <option value="CSCAN" <%- algoname === "CSCAN" ? "selected" : "" %>>Circular SCAN Algorithm (C-SCAN)</option>
+                </select>
+            </div>
+            <div class="radiobtn">
+                <input type="radio" id="left" name="side" value="LEFT" <%- side === "LEFT" ? "checked" : "" %>>
+                <label for="left">Left</label>
+                <input type="radio" id="right" name="side" value="RIGHT" <%- side === "RIGHT" ? "checked" : "" %>>
+                <label for="right">Right</label>
+            </div>
+            <button>Stimulate</button>
+        </form>
+    </div>
+    <div class="hiddendiv">
+            <p id="seektime">Total number of tracks movement (Seek Time): </p>
+            <p id="executionseq">Sequence of execution: </p>
+            <p id="avg">Average Seek Time: </p>
+    </div>
+</body>

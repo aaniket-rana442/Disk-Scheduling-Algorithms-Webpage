@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+    <div class="allalgo">
+        <h1>Circular SCAN (C-SCAN) Algorithm</h1>
+        <p>
+            This algorithm is a modified version of the SCAN
+            algorithm. C-SCAN sweeps the disk from end-to-end, but
+            as soon it reaches one of the end tracks it then moves to
+            the other end track without servicing any requesting
+            location. As soon as it reaches the other end track it
+            then starts servicing and grants requests headed to its
+            direction. This algorithm improves the unfair situation of
+            the end tracks against the middle tracks.
+            <br><br>
+            In the SCAN algorithm, the disk arm again scans the path that
+            has been scanned, after reversing its direction. So, it may be
+            possible that too many requests are waiting at the other end 
+            or there may be zero or few requests pending at the scanned area.
+            <br>
+            These situations are avoided in the C-SCAN algorithm in which 
+            the disk arm instead of reversing its direction goes to the other
+            end of the disk and starts servicing the requests from there. So,
+            the disk arm moves in a circular fashion and this algorithm is
+            also similar to the SCAN algorithm hence it is known as C-SCAN (Circular SCAN).
+        </p>
+        <div class="advantages">
+            <h3>Advantages of C-SCAN Algorithm</h3>
+            <ul>
+                <li>Every request gets a fair chance to be served.</li>
+                <li>Similar response times for all requests.</li>
+                <li>Works well when the number of requests is high.</li>
+                <li>Unlike SCAN, there is no back-and-forth motion, reducing seek time.</li>
+            </ul>
+        </div>
+        <div class="disadvantages">
+            <h3>Disadvantages of C-SCAN Algorithm
+            </h3>
+            <ul>
+                <li>The jump from the highest to the lowest request adds extra head movement.</li>
+                <li>It requires additional logic for circular movement.</li>
+                <li>May not be the best choice if requests are scattered across the disk.</li>
+            </ul>
+        </div>
+        <br>
+        <a href="/stimulate">Let's dive into the stimulation process</a>
+        <br><br>
+    </div>
+</body>

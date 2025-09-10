@@ -1,0 +1,56 @@
+<%  layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="question-head">
+        <div class="content-box">
+            <h3>What is <br><span id="topic-name">Disk Scheduling ?</span></h3>
+            <p>Disk scheduling is the process of deciding the order in which I/O requests to the disk are serviced to optimize performance, such as reducing seek time or improving throughput.</p>
+            <br>
+            <a href="/stimulate">Stimulation</a>
+        </div>
+    </div>
+
+    <div class="intro">
+        <div class="intro-1">
+            <h1>Disk Scheduling</h1>
+            <p>
+                In a movable-head disk, where there is only one access arm to service all the disk tracks, the time spent by the Read and Write (R/W) head to move from one track to another is called Seek Time. This is differing from a fixed-head disk wherein there is an assigned arm for every track. Seek time can be compared to the movement of a space shuttle from one planetary orbit to another. There are two kinds of seek either inward or outward seek depending on the current location of the R/W head. Moving towards the outer portion of the disk corresponds to an outward seek while moving towards the center of the disk considered an inward seek.<br>
+                Once it reaches the desired track, the disk will rotate to find the block of data to be accessed and position it before the R/W head. The time spent in moving the disk from undesired block to desired block is known as rotational delay or latency time. Rotational delay positions the tip of the R/W head at the beginning of the sector where the data is to be read or written.<br>
+                As soon as the R/W head is positioned at the beginning of the data block, it is electrically switched on in line with the preparation for read or writes function. Once it is switched on, that’s the time the read or write functions begin.<br>
+                Finally, the disk will again rotate in order for the data block to get ahead of under read/write. The data is then read from or written to the disk; consequently it is called transfer time.<br>
+            </p>
+        </div>
+        <br>
+        <div class="videodisk">
+            <video width="100%" height="500" controls autoplay muted>
+                <source src="/images_videos/disk_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <br>
+        <div class="intro-2">
+            <h1>Disk Structure</h1>
+            <div class="intro-2-1">
+                <p>
+                    Each disk platter has a flat circular shape, like a CD. Common platter diameters range from 1.8 to 3.5 inches. The two surfaces of a platter are covered with a magnetic material. We store information by recording it magnetically on the platters, and we read information by detecting the magnetic pattern on the platters.<br>
+                    A read-write head “flies” just above each surface of every platter. The heads are attached to a disk arm that moves all the heads as a unit. The surface of a platter is logically divided into circular tracks, which are subdivided into sectors. The set of tracks at a given arm position make up a cylinder. There may be thousands of concentric cylinders in a disk drive, and each track may contain hundreds of sectors. Each sector has a fixed size and is the smallest unit of transfer. The sector size was commonly 512 bytes until around 2010. At that point, many manufacturers start migrating to 4KB sectors. The storage capacity of common disk drives is measured in gigabytes and terabytes.<br>
+                    A disk drive motor spins it at high speed. Most drives rotate 60 to 250 times per second, specified in terms of rotations per minute (RPM). Common drives spin at 5,400, 7,200, 10,000, and 15,000 RPM. Some drives power down when not in use and spin up upon receiving an I/O request. Rotation speed relates to transfer rates. The transfer rate is the rate at which data flow between the drive and the computer. Another performance aspect, the positioning time, or random-access time, consists of two parts: the time necessary to move the disk arm to the desired cylinder, called the seek time, and the time necessary for the desired sector to rotate to the disk head, called the rotational latency. Typical disks can transfer tens to hundreds of megabytes of data per second, and they have seek times and rotational latencies of several milliseconds. They increase performance by having DRAM buffers in the drive controller.<br> 
+                    The disk head flies on an extremely thin cushion (measured in microns) of air or another gas, such as helium, and there is a danger that the head will make contact with the disk surface. Although the disk platters are coated with a thin protective layer, the head will sometimes damage the magnetic surface. This accident is called a head crash. A head crash normally cannot be repaired; the entire disk must be replaced, and the data on the disk are lost unless they were backed up to other storage or RAID protected.<br>
+                    HDDs are sealed units, and some chassis that hold HDDs allow their removal without shutting down the system or storage chassis. This is helpful when a system needs more storage than can be connected at a given time or when it is necessary to replace a bad drive with a working one. Other types of storage media are also removable, including CDs, DVDs, and Blu-ray discs.
+                </p>
+                <img src="/images_videos/disk_label_diagram.jpg">
+            </div>
+        </div>
+        <br><br>
+        <div class="algo-name">
+            <p>There are several Disk Scheduling Algorithms. They are as follows:</p>
+            <div class="gridbox">
+                <a href="/fcfs">First Come First Served Algorithm</a>
+                <a href="/sstf">Shortest Seek Time First Algorithm</a>
+                <a href="/look">LOOK Algorithm</a>
+                <a href="/clook">Circular-LOOK Algorithm</a>
+                <a href="/scan">SCAN Algorithm</a>
+                <a href="/cscan">Circular SCAN Algorithm</a>
+            </div>
+        </div>
+    </div>
+</body>

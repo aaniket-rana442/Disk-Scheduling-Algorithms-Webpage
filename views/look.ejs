@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="allalgo">
+        <h1>LOOK Disk Scheduling Algorithm</h1>
+        <p>
+            This algorithm is similar to SCAN algorithm except for
+            the end-to-end reach of each sweep. The R/W head is
+            only tasked to go the farthest location in need of
+            servicing. This is also a directional algorithm, as
+            soon as it is done with the last request in one direction it
+            then sweeps in the other direction 
+            <br><br>
+            The LOOK algorithm is an improved disk scheduling algorithm that is a variant of the SCAN algorithm. It moves the disk head in one direction until it reaches the last request in that direction, then reverses its direction without going to the end of the disk.
+            <br><br>
+        </p>
+        <h3>Working of LOOK Algorithm</h3>
+        <ul>
+            <li>The disk head moves in a specific direction (left or right).</li>
+            <li>It serves all the requests in that direction until it reaches the last request (the farthest request in that direction).</li>
+            <li>Unlike SCAN, it does not go to the end of the disk if there are no requests in that region.</li>
+            <li>After serving the last request in that direction, it reverses and moves in the opposite direction to handle the remaining requests.</li>
+        </ul>
+        <div class="advantages">
+            <h3>Advantages of LOOK Algorithm</h3>
+            <ul>
+                <li>It reduces unnecessary movements compared to SCAN.</li>
+                <li>It provides better performance and reduced seek time.</li>
+                <li>This algorithm is efficient for large disk sizes with sparse requests.</li>
+            </ul>
+        </div>
+        <div class="disadvantages">
+            <h3>Disadvantages of LOOK Algorithm</h3>
+            <ul>
+                <li>It may still suffer from the Starvation problem if new requests keep arriving on the other side.</li>
+                <li>This algorithm is not optimal as more complex algorithms like C-LOOK or SSTF in certain scenarios.</li>
+            </ul>
+        </div>
+        <br>
+        <a href="/stimulate">Let's dive into the stimulation process</a>
+        <br><br>
+    </div>
+</body>
