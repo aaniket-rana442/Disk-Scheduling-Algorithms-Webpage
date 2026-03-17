@@ -129,6 +129,10 @@ footer .copyright{
 footer .linking ul li:hover{
     text-decoration: underline;
 }
+footer .linking ul li a{
+    text-decoration: none;
+    color: black;
+}
 /* INDEX.EJS */
 .main-img{
     height: 100%;
